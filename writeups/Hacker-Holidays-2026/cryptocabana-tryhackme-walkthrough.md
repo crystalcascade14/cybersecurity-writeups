@@ -2,7 +2,7 @@
 
 ---
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/001.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/001.png)
 
 **Day 9** goes cloud. We’ll follow a leaked Azure token from a sloppy storage bucket all the way to a Key Vault full of secrets, and piece together the flag hiding inside.
 
@@ -24,7 +24,7 @@ wget \
 ```
 
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/002.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/002.png)
 
 Let’s see what is inside:
 
@@ -36,7 +36,7 @@ find . -type f
 
 The output will be pretty long, but the most interesting fiels are index.html and app.js.
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/003.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/003.png)
 
 Let’s cat them both. Index.html is clean — nothing interesting. Let’s inspect app.js and search for interesting strings
 
@@ -46,7 +46,7 @@ grep -niE "https|azure|vault|storage|blob|token|login|api|client|tenant|secret|k
 ```
 
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/004.jpeg)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/004.jpeg)
 
 We found the first vulnerability — STORAGE\_ACCOUNT and BACKUP\_SAS. These values are credentials.
 
@@ -71,7 +71,7 @@ ${SAS}
 ```
 
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/005.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/005.png)
 
 List containers in the account using the Azure Blob REST API:
 
@@ -113,9 +113,9 @@ Backups is empty. Vault contains two blobs:
 - backup-service-account.json
 - seed\_phrase.txt
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/006.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/006.png)
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/007.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/007.png)
 
 ## Step 3: Download and inspect the vault blobs
 
@@ -145,7 +145,7 @@ cat
 ```
 
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/008.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/008.png)
 
 backup-service-account.json turns out to be a full Azure service principal — client\_id, client\_secret, tenant\_id, plus the name and URI of a Key Vault:
 
@@ -218,7 +218,7 @@ az login
 ```
 
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/009.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/009.png)
 
 This drops us into the Az-Subs-CTF subscription, authenticated as the service principal itself.
 
@@ -232,7 +232,7 @@ az keyvault secret list --vault-name "ccabana-kv-f5scjagc" -o table
 
 Four secrets show up: `key-shard-1`, `key-shard-2`, `key-shard-3`, and `master-key` — the last one disabled. The naming makes the plan obvious: the three shards are meant to be pulled and stitched together.
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/010.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/010.png)
 
 
 ```graphql
@@ -270,7 +270,7 @@ query
 
 > *"Rotated this after IT flagged it -- old value should still be recoverable if you know where to look."*
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/011.jpeg)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/011.jpeg)
 
 ## Step 6: Recover the rotated secret
 
@@ -284,7 +284,7 @@ az keyvault secret list-versions --vault-name "ccabana-kv-f5scjagc" --name "key-
 
 Two versions come back a couple seconds apart. Grab the older one:
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/012.jpeg)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/012.jpeg)
 
 
 ```graphql
@@ -308,8 +308,9 @@ query
 
 That returns `_k3ys_n0t_` — the missing middle piece.
 
-![CryptoCabana TryHackMe walkthrough screenshot](../assets/cryptocabana-tryhackme-walkthrough/013.png)
+![CryptoCabana TryHackMe walkthrough screenshot](../../assets/cryptocabana-tryhackme-walkthrough/013.png)
 
 Now just assemble the flag: THM{n0t\_ur\_k3ys\_n0t\_ur\_c01ns!}
 
 Missed the previous challenges? You can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) , [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba), [**Day 3**](https://medium.com/@crystalcascade14/complimentary-tryhackme-walkthrough-0282c00a700c), [**Day 4**](https://medium.com/@crystalcascade14/packed-light-tryhackme-walkthrough-83390b1f2117), [**Day 5**](https://medium.com/@crystalcascade14/beach-bar-tryhackme-walkthrough-5fbc8e0989c1)**,** [**Day 6**](https://medium.com/@crystalcascade14/overheard-at-breakfast-tryhackme-walkthrough-ad503524e298), [**Day 7**](https://medium.com/@crystalcascade14/do-not-disturb-tryhackme-walkthrough-7fefb6d0eda0) **and** [**Day 8**](https://medium.com/@crystalcascade14/towel-on-sunbed-tryhackme-walkthrough-23444dd3e24e)
+

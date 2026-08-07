@@ -4,13 +4,13 @@
 
 **Day 3** challenge of Hacker Holidays focused on a common cloud security issue: an AWS Cognito Identity Pool misconfiguration.
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/001.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/001.png)
 
 ## Step 1: Inspect the application
 
 Right-click the page and selectView Page Source. We can see it shows that the application loads an external JavaScript file:
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/002.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/002.png)
 
 The important line is:
 
@@ -24,7 +24,7 @@ The important line is:
 
 Append /app.js to the link and open it in your browser. It will reveal several important configuration values:
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/003.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/003.png)
 
 The main lines are:
 
@@ -103,7 +103,7 @@ d5ca7bb688
 ```
 
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/004.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/004.png)
 
 The output is:
 
@@ -158,7 +158,7 @@ f619d92c9ddd
 ```
 
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/005.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/005.png)
 
 The response contains:
 
@@ -266,7 +266,7 @@ aws sts get-caller-identity
 ```
 
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/006.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/006.png)
 
 This confirms that we successfully assumed the **unauthenticated Cognito role**.
 
@@ -285,10 +285,11 @@ table
 
 The command succeeds and returns every record stored in the DynamoDB table.
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/007.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/007.png)
 
 The flag is here. To find it you need to search /THM:
 
-![Complimentary TryHackMe walkthrough screenshot](../assets/complimentary-tryhackme-walkthrough/008.png)
+![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/008.png)
 
 If you haven’t read my previous walkthroughs, you can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) and [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba) below before continuing with Day 3.
+

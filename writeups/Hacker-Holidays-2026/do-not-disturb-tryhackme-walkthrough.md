@@ -4,7 +4,7 @@
 
 **Day 7** explores a web application vulnerability that chains a NoSQL authentication bypass with a Server-Side Template Injection (SSTI) flaw in an Express/Node.js application. Using Burp Suite, we’ll obtain an authenticated session, exploit EJS template injection, and achieve remote code execution.
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/001.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/001.png)
 
 The first challenge in **Do Not Disturb** combines a **NoSQL authentication bypass** with a **Server-Side Template Injection (SSTI)** vulnerability in an Express/Node.js application.
 
@@ -14,7 +14,7 @@ The first challenge in **Do Not Disturb** combines a **NoSQL authentication bypa
 
 Start by performing directory enumeration with Gobuster:
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/002.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/002.png)
 
 
 ```bash
@@ -39,7 +39,7 @@ Before intercepting any requests, configure your browser to send traffic through
 
 In Firefox, open the **FoxyProxy** extension and select the **Burp** profile.
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/003.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/003.png)
 
 Once Burp is enabled, ensure that **Intercept** is turned **On** in Burp Suite. All browser requests will now pass through Burp, allowing us to inspect and modify them before they reach the server.
 
@@ -55,13 +55,13 @@ username[$ne]=1&password[$ne]=1
 ```
 
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/004.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/004.png)
 
 The `$ne` operator is a MongoDB query operator that means **"not equal."** Instead of checking whether the supplied credentials match an existing account, the backend accepts any document whose username and password are **not equal to** `1`, effectively bypassing authentication.
 
 As soon as you forward, your Burp should look like this:
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/005.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/005.png)
 
 The important part is the `connect.sid` cookie. It represents an authenticated session that will be used when accessing the staff area.
 
@@ -71,7 +71,7 @@ After that, switch **Intercept** to **Off** and return to your browser.
 
 This is what you should see:
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/006.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/006.png)
 
 ## Step 4: Confirm Server-Side Template Injection
 
@@ -87,7 +87,7 @@ Replace the template with:
 ```
 
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/007.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/007.png)
 
 the expression has been evaluated by the server, confirming a **Server-Side Template Injection (SSTI)** vulnerability.
 
@@ -97,13 +97,13 @@ Since EJS executes JavaScript on the server, we can access Node.js modules and e
 
 Replace the template with:
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/008.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/008.png)
 
 ## Step 6: Read the user flag
 
 Now replace the template with the command from the screenshot (I can’t paste them here directly because Medium blocks it).
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/009.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/009.png)
 
 ## Part II
 
@@ -117,17 +117,17 @@ nc -lvnp 4444
 ```
 
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/010.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/010.png)
 
 Go back to the browser and paste a reverse shell payload (the command is displayed on these two screenshots):
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/011.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/011.png)
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/012.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/012.png)
 
 Get a shell.
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/013.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/013.png)
 
 ## Step 2: Enumerate a local system
 
@@ -141,7 +141,7 @@ ss -tlnu
 ```
 
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/014.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/014.png)
 
 This displays all listening TCP and UDP sockets. Services bound only to the loopback interface (`127.0.0.1`) are inaccessible from the network, so they are often overlooked during external reconnaissance. However, once an attacker has local access, these internal services become reachable and may expose additional attack paths.
 
@@ -165,7 +165,7 @@ node inspect 127.0.0.1:9229
 ```
 
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/015.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/015.png)
 
 Once connected, switch to the **REPL** (Read-Eval-Print Loop). The REPL provides an interactive JavaScript console, allowing you to evaluate JavaScript expressions within the context of the running Node.js process.
 
@@ -182,13 +182,13 @@ process
 ```
 
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/016.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/016.png)
 
 Running these commands confirms that the debugger is attached to a different process than our current shell. Since the Node.js service is running under another account, interacting with it through the debugger provides access to the execution context and permissions of that service rather than those of the `poolside` user.
 
 Now the next command (helps understand which user the process is running as):
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/017.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/017.png)
 
 We can also notice a group “disk” here. Members of the `disk` group are often allowed to access raw block devices such as:
 
@@ -197,7 +197,7 @@ We can also notice a group “disk” here. Members of the `disk` group are ofte
 / dev/nvme0n1  
 / dev/nvme0n1p1
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/018.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/018.png)
 
 The `id` command shows that the Node.js process runs as `pipelinesvc` and belongs to the `disk` group. On many Linux systems, members of this group can directly access raw block devices, making it possible to inspect the underlying filesystem.
 
@@ -215,6 +215,7 @@ process.getBuiltinModule(‘child_process’).execFileSync(‘/usr/sbin/debugfs�
 
 The result is in the picture:
 
-![Do Not Disturb TryHackMe Walkthrough screenshot](../assets/do-not-disturb-tryhackme-walkthrough/019.png)
+![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/019.png)
 
 Missed the previous challenges? You can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) , [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba), [**Day 3**](https://medium.com/@crystalcascade14/complimentary-tryhackme-walkthrough-0282c00a700c), [**Day 4**](https://medium.com/@crystalcascade14/packed-light-tryhackme-walkthrough-83390b1f2117), [**Day 5**](https://medium.com/@crystalcascade14/beach-bar-tryhackme-walkthrough-5fbc8e0989c1) **and** [**Day 6**](https://medium.com/@crystalcascade14/overheard-at-breakfast-tryhackme-walkthrough-ad503524e298)**.**
+

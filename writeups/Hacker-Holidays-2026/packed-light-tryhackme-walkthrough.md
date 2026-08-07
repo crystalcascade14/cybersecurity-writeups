@@ -4,7 +4,7 @@
 
 **Day 4** of TryHackMe’s Hacker Holidays challenge focuses on network forensics. We’ll investigate a packet capture, analyze a suspicious Python script, uncover a covert communication channel, and recover the hidden flag.
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/001.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/001.png)
 
 ## Step 1: Look at the HTTP requests
 
@@ -16,13 +16,13 @@ http.request
 ```
 
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/002.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/002.png)
 
 As we can see, packet#16 clearly stands our — it contains a Python script (updates.py) which is suspicious.
 
 Let’s export it. Proceed with File > Export Objects > HTTP.
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/003.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/003.png)
 
 I saved the script on my Desktop and opened it in VS Code to study.
 
@@ -30,7 +30,7 @@ I saved the script on my Desktop and opened it in VS Code to study.
 
 Inside the script you’ll find
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/004.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/004.png)
 
 This already tells us a lot:
 
@@ -40,7 +40,7 @@ This already tells us a lot:
 
 Scrolling down we can see where the data is hidden:
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/005.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/005.png)
 
 **Covert channel:**
 
@@ -56,7 +56,7 @@ hotel_sess_state
 
 A few lines above you’ll find:
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/006.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/006.png)
 
 This tells us that every character is processed like this: Original character > XOR > Base64 > Stored inside the cookie header. Therefore, to recover the original text we must reverse the process: Cookie > Base 64 > XOR > Original
 
@@ -72,19 +72,19 @@ Cookie: hotel_sess_state=HA==
 ```
 
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/007.jpeg)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/007.jpeg)
 
 To see it, starting from packet 391, you need to expand Hypertext Transfer Protocol. The first value is HA==
 
 Now, expand the next packet:
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/008.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/008.png)
 
 The value is AA==
 
 Move to the next one until you collect all values. I saved them all in my notepad
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/009.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/009.png)
 
 ## Step 5: Decode Base64
 
@@ -112,7 +112,7 @@ Remember the order used by the script
 
 Go back to the script and you will find the key there:
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/010.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/010.png)
 
 The key is:
 
@@ -126,10 +126,11 @@ H0t3lSt@ff0NlyK3epS3cr3t!
 
 As you can see, I copied all the characters and put the key there choosing UTF-8 as the script reveals. It didn’t work
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/011.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/011.png)
 
 But knowing the THM flag structure I noticed that the first letter was H > T. probably THM? I kept reducing they key until only the first letter was remaining. And it worked!
 
-![Packed Light TryHackMe walkthrough screenshot](../assets/packed-light-tryhackme-walkthrough/012.png)
+![Packed Light TryHackMe walkthrough screenshot](../../assets/packed-light-tryhackme-walkthrough/012.png)
 
 If you haven’t read my previous walkthroughs, you can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) , [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba) and[**Day 3**](https://medium.com/@crystalcascade14/complimentary-tryhackme-walkthrough-0282c00a700c).
+
