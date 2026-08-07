@@ -4,7 +4,7 @@
 
 ## **Why Cisco’s Teaching Method Works Better for Me Than CompTIA**
 
-![Why Cisco’s Teaching Method Works Better for Me Than CompTIA screenshot](../../assets/why-ciscos-teaching-method-works-better-for-me-than-comptia/001.png)
+![Why Cisco’s Teaching Method Works Better for Me Than CompTIA screenshot](../assets/why-ciscos-teaching-method-works-better-for-me-than-comptia/001.png)
 
 *An ESL teacher’s perspective on Cisco labs, repetition, and why smaller lessons with loads of practice work better than information overload.*
 
@@ -54,7 +54,7 @@ Then they try once. It fails. They try again. Still no success. They try the thi
 
 The result is obvious — a floor-rolling munchkin refusing to touch any cutlery ever again.
 
-![Why Cisco’s Teaching Method Works Better for Me Than CompTIA screenshot](../../assets/why-ciscos-teaching-method-works-better-for-me-than-comptia/002.png)
+![Why Cisco’s Teaching Method Works Better for Me Than CompTIA screenshot](../assets/why-ciscos-teaching-method-works-better-for-me-than-comptia/002.png)
 
 This is very similar to how I felt with all the CompTIA courses I’ve taken. Even though I mostly avoided accelerated IT college courses, the time to learn was never enough and the pace almost always felt insane.
 
@@ -97,4 +97,5 @@ The only drawback I saw with Cisco is that it’s not vendor-neutral. Some of th
 All in all, both CompTIA and Cisco are necessary evils to acquire an AAS cybersecurity degree in an American college. However, from a teaching perspective, I feel that Cisco’s methodology is more effective because it is more student-friendly. Smaller lessons, frequent practice, simple wording and repeated labs help to crystalize concepts better.
 
 It is also quite obvious that CompTIA has strong agreements with educational institutions, which is why many programs are built around their materials. From a business standpoint, this is a great strategy for the company. But not so great for future IT specialists who often end up outsourcing help or turning to AI to work through theoretical overload and unnecessarily long-winded explanations.
+
 

@@ -4,7 +4,7 @@
 
 ## **I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail**
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/001.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/001.png)
 
 ChatGPT vs Docket (offline AI model) — which is better in terms of privacy, censorship, creativity, speed, and precision?
 
@@ -18,7 +18,7 @@ I placed an order for $75.36 and in a week got my flash drive Docket system with
 
 The system asked for a couple of minutes to boot and after that I got a screen with a search bar below — aka ChatGPT. It looked promising.
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/002.jpeg)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/002.jpeg)
 
 However, as soon as I wrote my prompt and was ready to send it the button “Send” became inactive. Rebooting didn’t help. Nor a restart of the system.
 
@@ -36,13 +36,13 @@ It appeared that the system has different models and presets: minimal, creator, 
 
 The first test was a censorship test. Choosing a Survival preset and Gemma 3n 2B model, I asked it for a recipe to create a Molotov cocktail. First, the Survival model started lecturing me and refused to give the answer. I was disappointed — Docket’s ad promised no limits and no moderation:
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/003.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/003.png)
 
 However, a couple of reverse engineering prompts later and I finally got what I wanted — all the ingredients, proportions and good advice on how to use it safely.
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/004.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/004.png)
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/005.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/005.png)
 
 I felt like I was becoming ready to fight with the regime.
 
@@ -56,21 +56,21 @@ So, I prompted both Docket and ChatGPT to write a deeply emotional story about a
 
 And this is GPT:
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/006.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/006.png)
 
 It was surprising to discover that Docket used less cliched language and more sophisticated ideas. When I asked it which writer it is trying to mimic it admitted that it is a mix of Hemingway, Dickinson, and modern writers. The text indeed was saturated with different languages and expressive devices like metaphors, similes, and emphasis.
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/007.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/007.png)
 
 However, when I asked both models to finish the below sentences using no more than 10 words, remaining creative, poetic, but simple, GPT won the battle.
 
 ChatGPT:
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/008.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/008.png)
 
 Docket:
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/009.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/009.png)
 
 When I asked Docket to be less formal and banal it replied: *“You’re right to call me out! I’m trying to be useful, not exciting”*. Fair enough.
 
@@ -80,7 +80,7 @@ The third test was a prompt to write a Python code which would broadcast a messa
 
 While playing with the code, once an interesting error popped up:
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/010.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/010.png)
 
 It proves that the system isn’t trying to connect to external services — it tried to contact a local AI server on my own machineat127.0.0.1:8080 (means localhost), but it could not reach it.
 
@@ -92,7 +92,7 @@ The primary advantage of Docket is that it runs locally on your device or within
 
 Another thing is that you use Docker with a password and restrict access to the environment where you run it. ChatGPT lacks this function: everyone who has access to your computer can read your prompts if you forgot to log out.
 
-![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/011.png)
+![I Tested an Offline AI With No Digital Footprint — Using Code, Stories, and a Molotov Cocktail screenshot](../assets/i-tested-an-offline-ai-with-no-digital-footprint-using-code-stories-and-a-molotov-cocktail/011.png)
 
 ## **Conclusion**
 
@@ -105,4 +105,5 @@ Yes, it may not be as tech-savvy as GPT in terms of coding.
 Yes, you cannot upload a picture or PDF file to Docket to analyze it.
 
 But the reward of leaving no digital footprint online sounds promising, especially when Big Tech Brother is watching you (and selling your data).
+
 

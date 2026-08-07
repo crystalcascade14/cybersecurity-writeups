@@ -4,7 +4,7 @@
 
 ## **I Tried to Find Myself Online — and Here is What Strangers Can See**
 
-![I Tried to Find Myself Online — and Here is What Strangers Can See screenshot](../../assets/i-tried-to-find-myself-online-and-here-is-what-strangers-can-see/001.png)
+![I Tried to Find Myself Online — and Here is What Strangers Can See screenshot](../assets/i-tried-to-find-myself-online-and-here-is-what-strangers-can-see/001.png)
 
 No hacking. No brute forcing — just a username, an email, a few OSINT tools, and Google.
 
@@ -60,7 +60,7 @@ My email.
 
 I checked it using Have I Been Pwned, half-expecting nothing. Instead, I found it tied to a breach involving Ticketmaster.
 
-![I Tried to Find Myself Online — and Here is What Strangers Can See screenshot](../../assets/i-tried-to-find-myself-online-and-here-is-what-strangers-can-see/002.png)
+![I Tried to Find Myself Online — and Here is What Strangers Can See screenshot](../assets/i-tried-to-find-myself-online-and-here-is-what-strangers-can-see/002.png)
 
 No dramatic moment. No notification. No clear memory of when it happened. Just the quiet understanding that my information had already traveled places I never intended.
 
@@ -113,4 +113,5 @@ I didn’t get hacked.
 I just looked myself up.
 
 And that was enough.
+
 

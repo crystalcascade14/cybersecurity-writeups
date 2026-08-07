@@ -4,7 +4,7 @@
 
 ## **I Thought Cybersecurity Was About Intelligence. It’s About Patience**
 
-![I Thought Cybersecurity Was About Intelligence. It’s About Patience screenshot](../../assets/i-thought-cybersecurity-was-about-intelligence-its-about-patience/001.png)
+![I Thought Cybersecurity Was About Intelligence. It’s About Patience screenshot](../assets/i-thought-cybersecurity-was-about-intelligence-its-about-patience/001.png)
 
 I came to cybersecurity from English teaching with high hopes: to do something more intellectually stimulating — and, of course, to earn more money. I expected it to be difficult but “I am a tough cookie” — or so I thought.
 
@@ -36,7 +36,7 @@ Very convenient.
 
 For additional student enjoyment, CompTIA provided a glossary at the end of the course with all the terms and acronyms I was expected to know for Security+. It was over 150 pages long. I had 2.5 months to absorb it together with understanding the concepts and doing all the labs, because that was the timeframe my college gave me to complete the Network Security course based on CompTIA+.
 
-![I Thought Cybersecurity Was About Intelligence. It’s About Patience screenshot](../../assets/i-thought-cybersecurity-was-about-intelligence-its-about-patience/002.png)
+![I Thought Cybersecurity Was About Intelligence. It’s About Patience screenshot](../assets/i-thought-cybersecurity-was-about-intelligence-its-about-patience/002.png)
 
 Nothing difficult. I just needed to be patient.
 
@@ -105,4 +105,5 @@ I would just add two words:
 **with time**
 
 You just need to be patient.
+
 

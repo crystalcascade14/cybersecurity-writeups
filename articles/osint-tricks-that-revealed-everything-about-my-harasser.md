@@ -4,7 +4,7 @@
 
 ## **OSINT Tricks That Revealed Everything About My Harasser**
 
-![OSINT Tricks That Revealed Everything About My Harasser screenshot](../../assets/osint-tricks-that-revealed-everything-about-my-harasser/001.png)
+![OSINT Tricks That Revealed Everything About My Harasser screenshot](../assets/osint-tricks-that-revealed-everything-about-my-harasser/001.png)
 
 *This is a story about how OSINT helped me to learn everything about an unknown man who harassed me and my family.*
 
@@ -104,7 +104,7 @@ python3 sherlock janedoe
 
 The results were mostly noise as Sherlock gives a lot of false positives, so I had to check all pages manually.
 
-![OSINT Tricks That Revealed Everything About My Harasser screenshot](../../assets/osint-tricks-that-revealed-everything-about-my-harasser/002.png)
+![OSINT Tricks That Revealed Everything About My Harasser screenshot](../assets/osint-tricks-that-revealed-everything-about-my-harasser/002.png)
 
 There was only one lead which pointed me to Jane’s Pinterest page. Luckily, the profile picture showed both of them together. That was my first confirmation.
 
@@ -128,7 +128,7 @@ holehe janedoe@gmail.com
 
 You can check here both emails and usernames and use filters to limit your search to the US or globally. For a local search use tags:
 
-![OSINT Tricks That Revealed Everything About My Harasser screenshot](../../assets/osint-tricks-that-revealed-everything-about-my-harasser/003.png)
+![OSINT Tricks That Revealed Everything About My Harasser screenshot](../assets/osint-tricks-that-revealed-everything-about-my-harasser/003.png)
 
 Having checked the email and the username — janedoe — I found her Facebook, LinkedIn, and others. Before that Facebook search didn’t give me anything for my request.
 
@@ -156,7 +156,7 @@ python3 ghunt.py login
 ```
 
 
-![OSINT Tricks That Revealed Everything About My Harasser screenshot](../../assets/osint-tricks-that-revealed-everything-about-my-harasser/004.png)
+![OSINT Tricks That Revealed Everything About My Harasser screenshot](../assets/osint-tricks-that-revealed-everything-about-my-harasser/004.png)
 
 In my case, it helped me establish the places Jane Doe and her son had visited. It turned out that the mom had left quite a few reviews about restaurants and local services, which allowed me to identify patterns in their movements and even trace their previous place of residence — Ohio.
 
@@ -236,4 +236,5 @@ OSINT is often associated with cybersecurity, investigations, or research. But s
 > Sometimes, it’s simply a way to feel safe again.
 
 If you know other OSINT tools or techniques that could help in situations like this, I’d genuinely love to learn more.
+
 

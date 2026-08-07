@@ -2,7 +2,7 @@
 
 ---
 
-![Cybersecurity Taught Me How to Stop Taking Mistakes Personally screenshot](../../assets/cybersecurity-taught-me-how-to-stop-taking-mistakes-personally/001.png)
+![Cybersecurity Taught Me How to Stop Taking Mistakes Personally screenshot](../assets/cybersecurity-taught-me-how-to-stop-taking-mistakes-personally/001.png)
 
 My very first day of primary school was terrible. Thirty new kids around me. A loud bell every 45 minutes. Short breaks. Tough discipline. But worse was my first day AFTER school when I was doing my first homework ever.
 
@@ -214,4 +214,5 @@ I came to a conclusion that failure to complete the challenge is much more fun, 
 But when I fail?
 
 That’s where the real learning begins.
+
 

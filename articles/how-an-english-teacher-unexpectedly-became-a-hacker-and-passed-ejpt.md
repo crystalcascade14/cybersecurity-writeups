@@ -4,7 +4,7 @@
 
 ## How an English Teacher Unexpectedly Became a Hacker (and Passed eJPT)
 
-![How an English Teacher Unexpectedly Became a Hacker (and Passed eJPT) screenshot](../../assets/how-an-english-teacher-unexpectedly-became-a-hacker-and-passed-ejpt/001.png)
+![How an English Teacher Unexpectedly Became a Hacker (and Passed eJPT) screenshot](../assets/how-an-english-teacher-unexpectedly-became-a-hacker-and-passed-ejpt/001.png)
 
 **Whoami**
 
@@ -139,4 +139,5 @@ As a teacher, I am not a big fan of testing knowledge by simply learning theory 
 As for my next certification? I haven’t decided yet.
 
 But I’m all ears.
+
 
