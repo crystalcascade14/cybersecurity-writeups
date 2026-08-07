@@ -4,37 +4,37 @@
 
 A hands-on walkthrough of the TryHackMe **Checkmate** room, covering Burp Suite, Hydra, CUPP, Hashcat, custom wordlists, and practical password attack techniques.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/001.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/001.png)
 
 ## **Level 1**
 
 To brute-force the password on this level I used Burp Suite and xató-net-10-million-passwords-10.txt wordlist that is located in AttackBox under /usr/share/wordlists/SecLists/Passwords.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/002.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/002.png)
 
 So, first we launch Burp and intercept a POST request. We need to open Burp’s browser first. If Burp doesn’t let you, you will have to go to the Settings > Burp browser and tick the box “Allow Burp’s browser”.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/003.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/003.png)
 
 Then navigate to the page, enable proxy and intercept a POST request, trying to login with admin/admin credentials. Send your intercepted request to Intruder, choose positions for password, and load the wordlist xató-net-10-million-passwords-10.txt. Start the attack and monitor the Status column. The correct password returns HTTP 302, while incorrect passwords return HTTP 200.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/004.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/004.png)
 
 The status code for the password 12345 shows 302, which means this is what we need.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/005.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/005.png)
 
 ## Level 2
 
 As we know, we need to create a custom wordlist with the keywords from the website.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/006.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/006.png)
 
 I called my file with the words “innovation”, “excellence”, “security”, “digital”, “cloud”, “future”, “talent” > pass.txt.
 
 We will use Burp again, and the procedure here is the same. Intercept POST request, send it to Intruder, set the positions, and upload your newly created pass.txt
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/007.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/007.png)
 
 The server returns HTTP status code 302 for the password “excellence”. This is our password.
 
@@ -42,7 +42,7 @@ The server returns HTTP status code 302 for the password “excellence”. This 
 
 For Level 3 we need to gather Marco’s personal info. Let’s log in to his page in jobs.thm.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/008.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/008.png)
 
 For this task we will use CUPP tool that will help us to generate custom passwords based on personal data.
 
@@ -60,7 +60,7 @@ python3 cupp.py -i
 ```
 
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/009.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/009.png)
 
 Here we will fill the form, skipping the information we don’t know with Enter. Generation of the list will take some time, so be patient.
 
@@ -72,17 +72,17 @@ hydra -l marco -P marco.txt 10.66.150.148 -s 5003 http-post-form “/login:usern
 ```
 
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/010.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/010.png)
 
 ## Level 4
 
 After the password retrieval from the previous step, we need to log in and locate some picture.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/011.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/011.png)
 
 Right click > dev tools > Network
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/012.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/012.png)
 
 The red one is our target. Copy and save this hash in a file:
 
@@ -94,9 +94,9 @@ d34a569ab7aaa54dacd715ae64953455d86b768846cd0085ef4e9e7471489b7b
 
 Crack the hash using hashcat. For SHA-256 we need to use mode 1400 + rockyou.txt wordlist.
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/013.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/013.png)
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/014.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/014.png)
 
 The password is “family”.
 
@@ -173,7 +173,7 @@ python3 script.py
 
 Passwords.txt is ready to be used
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/015.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/015.png)
 
 Now we will brute-force ssh login using the list
 
@@ -185,4 +185,5 @@ hydra -l marco -P passwords.txt ssh://10.66.150.148 -V
 
 The password is Security2024!
 
-![Checkmate TryHackMe walkthrough screenshot](../assets/checkmate-tryhackme-walkthrough/016.png)
+![Checkmate TryHackMe walkthrough screenshot](../../assets/checkmate-tryhackme-walkthrough/016.png)
+

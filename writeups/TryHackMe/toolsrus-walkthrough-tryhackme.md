@@ -4,13 +4,13 @@
 
 Nice beginner-friendly room to test your knowledge on nmap, dirbuster, hydra, nikto and Metasploit console.
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/001.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/001.png)
 
 ## Step 1
 
 If we try to access the machine in the browser, we can see this:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/002.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/002.png)
 
 Let’s search for hidden directories:
 
@@ -20,27 +20,27 @@ gobuster dir -u 10.80.135.234 -w /usr/share/wordlists/SecLists/Discovery/Web-Con
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/003.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/003.png)
 
 We are ready to answer Q1:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/004.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/004.png)
 
 ## Step 2
 
 Let’s check /guidelines in the browser. Here is a message for us:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/005.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/005.png)
 
 The name is bob. And this is how we got the answer to Q2:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/006.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/006.png)
 
 ## Step 3
 
 To answer Q3, check the results of dirbuster. The directory that uses basic authentication is /protected
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/007.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/007.png)
 
 ## Step 4
 
@@ -48,7 +48,7 @@ What is bob’s password to the protected part of the website?
 
 To bruteforce it, we will need hydra. But first let’s check /protected in our browser. We may see an auth panel here:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/008.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/008.png)
 
 Using Hydra, we brute-force HTTP basic authentication for the `/protected` directory using the username `bob:`
 
@@ -60,7 +60,7 @@ hydra -l bob -P /opt/metasploit-framework/embedded/framework/data/wordlists/unix
 
 Here we go, the password is retrieved:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/009.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/009.png)
 
 NB: if you can’t find the wordlists in the AttackBox, use:
 
@@ -70,9 +70,9 @@ find / -name unix_passwords.txt 2>/dev/null
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/010.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/010.png)
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/011.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/011.png)
 
 ## Step 5
 
@@ -86,27 +86,27 @@ nmap 10.80.135.234
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/012.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/012.png)
 
 What other port that serves a webserver is open on the machine?
 
 Let’s check 8009 in the browser:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/013.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/013.png)
 
 The page is not accessible in the browser. Let’s check 1234. This will land you on the Apache Tomcat page:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/014.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/014.png)
 
 So, here we are:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/015.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/015.png)
 
 ## Step 6:
 
 From the page we can clearly see that it is Apache Tomcat (see picture above):
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/016.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/016.png)
 
 ## Step 7:
 
@@ -118,11 +118,11 @@ nikto -h 10.80.135.234 -p 1234 -id bob:bubbles -root /manager/html
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/017.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/017.png)
 
 We found that the version is 1.1:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/018.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/018.png)
 
 If we look at the results of nikto, we can also answer the question about how many documents exist in this directory. As we can see, nikto found 10 items, but only 5 of them appear to be documents.
 
@@ -158,9 +158,9 @@ nikto -h 10.80.135.234 -p 80 -id bob:bubbles -root /manager/html | tee nikto_man
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/019.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/019.png)
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/020.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/020.png)
 
 ## Step 9
 
@@ -200,15 +200,15 @@ run
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/021.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/021.png)
 
 We got our meterpreter session. Now it’s time to check the shell:
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/022.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/022.png)
 
 Luckily, we are root. So, no privesc needed
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/023.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/023.png)
 
 ## Step 10
 
@@ -224,8 +224,9 @@ cat
 ```
 
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/024.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/024.png)
 
 Submit the flag.
 
-![ToolsRus walkthrough (TryHackMe) screenshot](../assets/toolsrus-walkthrough-tryhackme/025.png)
+![ToolsRus walkthrough (TryHackMe) screenshot](../../assets/toolsrus-walkthrough-tryhackme/025.png)
+

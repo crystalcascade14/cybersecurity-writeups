@@ -4,7 +4,7 @@
 
 ## What Studying Cybersecurity in College Gave Me That Online Courses Didn’t
 
-![What Studying Cybersecurity in College Gave Me That Online Courses Didn’t screenshot](../assets/what-studying-cybersecurity-in-college-gave-me-that-online-courses-didnt/001.png)
+![What Studying Cybersecurity in College Gave Me That Online Courses Didn’t screenshot](../../assets/what-studying-cybersecurity-in-college-gave-me-that-online-courses-didnt/001.png)
 
 This article is part of my series Learning Cybersecurity in College: The Honest Version, where I document what it’s like to study cybersecurity as a college student — the good, the frustrating, and the things nobody warns you about.
 
@@ -74,3 +74,4 @@ For someone who finds LinkedIn networking cringy, this type of low-pressure conn
 I stopped scrolling — not because Wireshark was new to me, but because explaining it to others helps me to understand it better. The teacher in me never left.
 
 Practice had already given me the *why*. College finally gave me the shared language to explain it. That’s when the professor’s lecture stopped being boring.
+

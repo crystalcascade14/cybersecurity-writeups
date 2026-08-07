@@ -4,13 +4,13 @@
 
 ## **KodeKloud’s AI Made Me Angrier Than Linux**
 
-![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../assets/kodeklouds-ai-made-me-angrier-than-linux/001.png)
+![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../../assets/kodeklouds-ai-made-me-angrier-than-linux/001.png)
 
 A few weeks ago, I decided to prepare seriously for the LFCS exam.
 
 I brewed chamomile tea, opened my laptop, put on a Linux course on Udemy, and honestly felt excited. The setup seemed perfect: video lessons combined with hands-on labs through KodeKloud-browser-based Linux terminals, practical exercises, instant grading, and an AI assistant that was supposed to help if you got stuck.
 
-![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../assets/kodeklouds-ai-made-me-angrier-than-linux/002.png)
+![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../../assets/kodeklouds-ai-made-me-angrier-than-linux/002.png)
 
 #### **50% of joy**
 
@@ -128,7 +128,7 @@ One minute:
 
 “You did everything right 😊”
 
-![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../assets/kodeklouds-ai-made-me-angrier-than-linux/003.png)
+![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../../assets/kodeklouds-ai-made-me-angrier-than-linux/003.png)
 
 Next minute:
 
@@ -140,7 +140,7 @@ I reached a point where I genuinely no longer trusted either myself or the platf
 
 The AI kept giving commands with absolute confidence, even when those commands failed immediately after I copied them exactly. When command #1 failed, it gave me command #2, then #3. When all of them failed it praised me and reverted back to #1. I felt like I got stuck in an infinite loop.
 
-![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../assets/kodeklouds-ai-made-me-angrier-than-linux/004.png)
+![KodeKloud’s AI Made Me Angrier Than Linux screenshot](../../assets/kodeklouds-ai-made-me-angrier-than-linux/004.png)
 
 Eventually I reached the final stage of Linux enlightenment: manually typing the expected answer into the file and praying to the sysadmin gods.
 
@@ -154,3 +154,4 @@ It was KodeKloud AI assistant that transformed my burning desire to learn into o
 
 And in a strange way, this experience still taught me something valuable about IT:  
  sometimes the AI-teacher is not helping you — it is ruining your mental health. What could help is probably a real teacher.
+

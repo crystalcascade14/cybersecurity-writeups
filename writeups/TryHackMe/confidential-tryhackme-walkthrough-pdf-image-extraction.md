@@ -4,7 +4,7 @@
 
 This challenge is designed to practice digital forensic skills. The goal is to recover a QR code that has been obscured by an image overlay.
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/001.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/001.png)
 
 #### Step 1.
 
@@ -16,9 +16,9 @@ cd /home/ubuntu/confidential and ls -la
 ```
 
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/002.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/002.png)
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/003.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/003.png)
 
 #### Step 2.
 
@@ -30,7 +30,7 @@ mkdir -p out
 ```
 
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/004.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/004.png)
 
 #### Step 3
 
@@ -44,7 +44,7 @@ pdfimages -all Repdf.pdf out/img
 
 This command extracts every image embedded in this PDF and save them as separate files
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/005.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/005.png)
 
 #### Step 4
 
@@ -58,7 +58,7 @@ ls
 ```
 
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/006.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/006.png)
 
 We can see that we have three .png files
 
@@ -72,15 +72,15 @@ xdg-open img-000.png
 ```
 
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/007.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/007.png)
 
 Here we are — the original is recovered:
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/008.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/008.png)
 
 If you try to open the next one with xdg — you will see — the triangular that covered the picture:
 
-![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/009.png)
+![Confidential TryHackMe Walkthrough (PDF Image Extraction) screenshot](../../assets/confidential-tryhackme-walkthrough-pdf-image-extraction/009.png)
 
 **Hackers’ mistake:**
 
@@ -93,3 +93,4 @@ They tried to “redact” the QR code by placing something on top of it, like:
 - a block shape;
 
 That hides the QR on the screen, but it does NOT remove it from the file. So, the QR image was still stored inside the PDF. This is the same reason why “bad redaction” in real life is dangerous.
+

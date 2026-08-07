@@ -4,7 +4,7 @@
 
 Brains walkthrough covers enumeration, TeamCity exploitation, and post-exploitation investigation. Using nmap, CVE research, Metasploit, and Splunk, we gain access, capture the flag, and trace the attacker’s actions through logs.
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/001.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/001.png)
 
 ## Step 1 — nmap scan
 
@@ -16,15 +16,15 @@ nmap 10.67.147.50
 
 The scan results showed that we have three ports open: 22, 80 and 50000:
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/002.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/002.png)
 
 If we open <http://10.67.147.50> (port 80) in a web browser we will see that the website is under maintenance. Reviwing the source code didn’t reveal anything. We will try <http://10.67.164.50:50000>
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/003.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/003.png)
 
 Let’s look up CVEs for TeamCity build 147512 online. A Google search brought us to Rapid7 website, where we found two common vulnerabilities:
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/004.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/004.png)
 
 ## Step 2 — Metasploit exploitation
 
@@ -38,7 +38,7 @@ search
 ```
 
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/005.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/005.png)
 
 #4 matches one of the CVE we discovered from Rapid7
 
@@ -60,7 +60,7 @@ run
 
 We got a session. Let’s why for meterpreter and stabilize the shell
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/006.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/006.png)
 
 Now we will search for the flag. Proceed to home directory
 
@@ -70,7 +70,7 @@ cd ~
 ```
 
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/007.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/007.png)
 
 #### What is the content of flag.txt in the user’s home folder?
 
@@ -82,7 +82,7 @@ In this part of the challenge I had to restart a machine a couple of times becau
 
 Firstly, we have to click on Search and set presets to All time (right corner):
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/008.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/008.png)
 
 The syntax for search in splunk required me some googling.
 
@@ -92,11 +92,11 @@ index=* new user
 ```
 
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/009.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/009.png)
 
 Thoroughly researching the logs I discovered that the new user was created 04/07/2024.
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/010.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/010.png)
 
 #### What is the name of the backdoor user which was created on the server after exploitation?
 
@@ -114,7 +114,7 @@ index=* source=”/var/log/dpkg.log” “installed”
 ```
 
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/011.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/011.png)
 
 #### What is the name of the malicious-looking package installed on the server?
 
@@ -130,8 +130,9 @@ index=* source=”/opt/teamcity” “plugin” “uploaded”
 ```
 
 
-![Brains Walkthrough Tryhackme screenshot](../assets/brains-walkthrough-tryhackme/012.png)
+![Brains Walkthrough Tryhackme screenshot](../../assets/brains-walkthrough-tryhackme/012.png)
 
 #### What is the name of the plugin installed on the server after successful exploitation?
 
 AyzzbuXY.zip
+

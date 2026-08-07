@@ -4,7 +4,7 @@
 
 Medium-level challenge that required knowledge of SQL Injection, Basic LFI (Local File Inclusion), Web enumeration (gobuster), Understanding PHP wrappers (file://)
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/001.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/001.png)
 
 **Step 1: enumeration**
 
@@ -22,13 +22,13 @@ The scan revealed a couple of interesting ones:
 - /phpmyadmin
 - /server-status
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/002.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/002.png)
 
 Let’s visit /mail. Looks like the directory indexing was enabled.
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/003.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/003.png)
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/004.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/004.png)
 
 From here we can see that *hr* is our login name. We also learned that hr login creds are stored in *config.php* and admin credentials are in the backend database.
 
@@ -36,7 +36,7 @@ From here we can see that *hr* is our login name. We also learned that hr login 
 
 Let’s browse <http://10.65.172.25> some more. Click the button API, get transferred here. This info is critical.
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/005.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/005.png)
 
 The API documentation page showed this endpoint:
 
@@ -86,7 +86,7 @@ http://10.65.172.25/file.php?cv=file://config.php
 
 This revealed the source code of `config.php`.
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/006.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/006.png)
 
 Now we know the creds:
 
@@ -96,17 +96,17 @@ hrpassword123
 
 Time to login. Here is our first flag:
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/007.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/007.png)
 
 #### Step 4: SQL injection
 
 Let’s test SQL injection probability. Insert a single quote (‘) into the search field.
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/008.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/008.png)
 
 This produced an SQL syntax error, confirming the parameter is vulnerable to SQL injection.
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/009.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/009.png)
 
 Payload
 
@@ -118,7 +118,7 @@ Payload
 
 Confirmed that the query uses 4 columns.
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/010.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/010.png)
 
 Using `information_schema.tables`:
 
@@ -133,7 +133,7 @@ returned:
 - candidates
 - users
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/011.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/011.png)
 
 now dump users:
 
@@ -143,7 +143,7 @@ now dump users:
 ```
 
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/012.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/012.png)
 
 We got credentials to login as an admin
 
@@ -151,7 +151,7 @@ admin
 
 admin@001admin
 
-![Recruit TryHackMe walkthrough screenshot](../assets/recruit-tryhackme-walkthrough/013.png)
+![Recruit TryHackMe walkthrough screenshot](../../assets/recruit-tryhackme-walkthrough/013.png)
 
 This room combined several common web vulnerabilities:  
 - directory indexing  
@@ -159,3 +159,4 @@ This room combined several common web vulnerabilities:
 - Local File Inclusion (LFI)  
 - unsafe PHP wrappers  
 - UNION-based SQL injection
+
