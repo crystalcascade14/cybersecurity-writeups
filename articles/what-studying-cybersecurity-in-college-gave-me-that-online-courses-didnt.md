@@ -40,7 +40,7 @@ Udemy and TryHackMe gave me the context behind the theory, so by the time I reac
 
 Motivated by this success, during my fall semester — while taking Microcomputer Essentials — I decided to embark on another side journey. I dreamt about eJPT and purchased ***INE’s*** course materials, proving once again that English teachers do more than just correct spelling and grammar and drink coffee.
 
-(The details of how that went are [here](https://medium.com/@crystal_cascade/how-an-english-teacher-unexpectedly-became-a-hacker-and-passed-ejpt-83431997ad41))
+(The details of how that went are [here](how-an-english-teacher-unexpectedly-became-a-hacker-and-passed-ejpt.md))
 
 #### Pace & motivation: fun vs. formal education
 
