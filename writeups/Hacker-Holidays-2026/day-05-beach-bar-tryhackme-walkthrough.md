@@ -194,5 +194,5 @@ Change to root and retrieve the flag.
 
 ![Beach Bar TryHackMe walkthrough screenshot](../../assets/beach-bar-tryhackme-walkthrough/011.png)
 
-If you haven’t read my previous walkthroughs, you can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) , [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba), [**Day 3**](https://medium.com/@crystalcascade14/complimentary-tryhackme-walkthrough-0282c00a700c) **and** [**Day 4**](https://medium.com/@crystalcascade14/packed-light-tryhackme-walkthrough-83390b1f2117)**.**
+If you haven’t read my previous walkthroughs, you can find the solutions for [**Day 1**](day-01-the-concierge-knows-too-much-tryhackme-walkthrough.md) , [**Day 2**](day-02-room-404-tryhackme-walkthrough.md), [**Day 3**](day-03-complimentary-tryhackme-walkthrough.md) **and** [**Day 4**](day-04-packed-light-tryhackme-walkthrough.md)**.**
 

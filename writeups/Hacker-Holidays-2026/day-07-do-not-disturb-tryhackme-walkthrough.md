@@ -217,5 +217,5 @@ The result is in the picture:
 
 ![Do Not Disturb TryHackMe Walkthrough screenshot](../../assets/do-not-disturb-tryhackme-walkthrough/019.png)
 
-Missed the previous challenges? You can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) , [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba), [**Day 3**](https://medium.com/@crystalcascade14/complimentary-tryhackme-walkthrough-0282c00a700c), [**Day 4**](https://medium.com/@crystalcascade14/packed-light-tryhackme-walkthrough-83390b1f2117), [**Day 5**](https://medium.com/@crystalcascade14/beach-bar-tryhackme-walkthrough-5fbc8e0989c1) **and** [**Day 6**](https://medium.com/@crystalcascade14/overheard-at-breakfast-tryhackme-walkthrough-ad503524e298)**.**
+Missed the previous challenges? You can find the solutions for [**Day 1**](day-01-the-concierge-knows-too-much-tryhackme-walkthrough.md) , [**Day 2**](day-02-room-404-tryhackme-walkthrough.md), [**Day 3**](day-03-complimentary-tryhackme-walkthrough.md), [**Day 4**](day-04-packed-light-tryhackme-walkthrough.md), [**Day 5**](day-05-beach-bar-tryhackme-walkthrough.md) **and** [**Day 6**](day-06-overheard-at-breakfast-tryhackme-walkthrough.md)**.**
 

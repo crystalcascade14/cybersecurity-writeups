@@ -291,5 +291,5 @@ The flag is here. To find it you need to search /THM:
 
 ![Complimentary TryHackMe walkthrough screenshot](../../assets/complimentary-tryhackme-walkthrough/008.png)
 
-If you haven’t read my previous walkthroughs, you can find the solutions for [**Day 1**](https://crystalcascade14.medium.com/the-concierge-knows-too-much-tryhackme-walkthrough-a73a3b65aba6) and [**Day 2**](https://medium.com/@crystalcascade14/room-404-tryhackme-walkthrough-aa32146fafba) below before continuing with Day 3.
+If you haven’t read my previous walkthroughs, you can find the solutions for [**Day 1**](day-01-the-concierge-knows-too-much-tryhackme-walkthrough.md) and [**Day 2**](day-02-room-404-tryhackme-walkthrough.md) below before continuing with Day 3.
 
